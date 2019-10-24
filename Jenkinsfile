@@ -11,18 +11,6 @@ pipeline {
         nodejs 'Node12'
     }
     stages {
-        stage('Build') {
-            parallel {
-                stage('JS') {
-                    steps {
-                        sh label: 'minimize JS', script: """
-                        cd ${WORKSPACE}/www/js
-                        uglifyjs --timings init.js -o ../min/custom-min.js
-                        """
-                    }
-                }
-            }
-        }
         stage('Archive') {
             when {
                 expression {
