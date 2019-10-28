@@ -12,11 +12,11 @@ pipeline {
     }
     stages {
         stage('Archive') {
-            when {
+/*            when {
                 expression {
                     params.RELEASE == 'RELEASE'
                 }
-            }
+*/            }
             steps {
                 archiveArtifacts '*.tgz'
             }
