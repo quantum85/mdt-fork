@@ -21,5 +21,9 @@ pipeline {
                 archiveArtifacts '*.tgz'
             }
         }
+            steps {
+                echo "BLABLA"
+            }
+        }		
     }
 }
