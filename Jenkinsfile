@@ -21,6 +21,7 @@ pipeline {
                 archiveArtifacts '*.tgz'
             }
         }
+		stage('Nexus') {
             steps {
                 echo "BLABLA"
             }
