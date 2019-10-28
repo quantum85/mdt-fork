@@ -23,7 +23,10 @@ pipeline {
         }
 		stage('Nexus') {
             steps {
-                echo "BLABLA"
+                       shell('''
+            curl -v -F r=raw-demo-hosted -F hasPom=false -F e=tgz -F g=site-archive -F a=site-archive -F v=1.0 -F p=tgz -F file=@site-archive.tgz -u jenkins-demo:$jenkins-demo https://master.jenkins-practice.tk:9443
+              '''.stripMargin()
+            )
             }
         }		
     }
