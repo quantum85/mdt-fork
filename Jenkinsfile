@@ -99,8 +99,16 @@ pipeline {
                 archiveArtifacts '*.tgz'
 
             }
-
+         //end stage
         }
+        stage('Nexus') {
+
+              steps {
+
+                echo "HELLO NEXUS"
+              }
+
+        }		
 
     }
 
