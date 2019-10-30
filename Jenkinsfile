@@ -106,6 +106,7 @@ pipeline {
               steps {
                 nexusArtifactUploader(
                         nexusVersion: 'nexus3',
+                        version: '3',
                         protocol: 'http',
                         nexusUrl: 'https://master.jenkins-practice.tk:9443/',
                         groupId: 'com.example',
