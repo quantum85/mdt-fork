@@ -114,7 +114,7 @@ pipeline {
                         credentialsId: 'student8-jenkins',
                         artifacts: [
                             [artifactId: 'com.example',
-                            file: 'site-archive-RELEASE-*.tgz',
+                            file: 'site-archive-RELEASE-0.0.1-8.tgz',
                             type: 'gzip']
                         ]
                 )
