@@ -107,7 +107,7 @@ pipeline {
                 nexusArtifactUploader(
                         nexusVersion: 'nexus3',
                         version: '3',
-                        protocol: 'http',
+                        protocol: 'https',
                         nexusUrl: 'https://master.jenkins-practice.tk:9443/',
                         groupId: 'site-archive',
                         repository: 'student8-repo',
