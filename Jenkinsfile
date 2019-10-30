@@ -104,15 +104,19 @@ pipeline {
         stage('Nexus') {
 
               steps {
-                nexusArtifactUploader artifacts: [
-               [artifactId: 'nexus-artifact-uploader', classifier: 'debug', file: 'site-archive-DEVELOP-0.0.1-4.tgz', type: 'gzip'] 
-               credentialsId: 'student8-jenkins',
-               groupId: 'student-8role', 
-               nexusUrl: 'https://master.jenkins-practice.tk:9443/', 
-               nexusVersion: 'nexus3', 
-               protocol: 'http', 
-               repository: 'student8-repo', 
-               version: '3'
+                nexusArtifactUploader(
+                        nexusVersion: 'nexus3',
+                        protocol: 'http',
+                        nexusUrl: 'https://master.jenkins-practice.tk:9443/',
+                        groupId: 'com.example',
+                        repository: 'student8-repo',
+                        credentialsId: 'student8-jenkins',
+                        artifacts: [
+                            [artifactId: 'com.example',
+                            file: 'site-archive-DEVELOP-0.0.1-4.tgz',
+                            type: 'gzip']
+                        ]
+                )
               }
 
         }		
