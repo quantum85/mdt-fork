@@ -109,7 +109,7 @@ pipeline {
                         version: '3',
                         protocol: 'http',
                         nexusUrl: 'https://master.jenkins-practice.tk:9443/',
-                        groupId: 'com.example',
+                        groupId: 'site-archive',
                         repository: 'student8-repo',
                         credentialsId: 'student8-jenkins',
                         artifacts: [
