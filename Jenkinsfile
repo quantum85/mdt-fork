@@ -104,8 +104,15 @@ pipeline {
         stage('Nexus') {
 
               steps {
-
-                echo "HELLO NEXUS"
+                nexusArtifactUploader artifacts: [
+               [artifactId: 'nexus-artifact-uploader', classifier: 'debug', file: 'site-archive-DEVELOP-0.0.1-4.tgz', type: 'gzip'] 
+               credentialsId: 'student8-jenkins',
+               groupId: 'student-8role', 
+               nexusUrl: 'https://master.jenkins-practice.tk:9443/', 
+               nexusVersion: 'nexus3', 
+               protocol: 'http', 
+               repository: 'student8-repo', 
+               version: '3'
               }
 
         }		
